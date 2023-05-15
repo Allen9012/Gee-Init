@@ -1,13 +1,18 @@
 package main
 
 import (
-	"singo/conf"
-	"singo/server"
+	"fmt"
+	"gee-Init/conf"
+	"gee-Init/server"
 )
 
 func main() {
 	// 从配置文件读取配置
-	conf.Init()
+	err := conf.Init()
+	if err != nil {
+		fmt.Printf("init config error : %s \n", err)
+		return
+	}
 
 	// 装载路由
 	r := server.NewRouter()
