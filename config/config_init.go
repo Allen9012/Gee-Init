@@ -6,10 +6,8 @@ package config
 // @Update  请填写自己的真实姓名（需要改）  ${DATE} ${TIME}
 import (
 	"fmt"
-	"gee-Init/cache"
-	"gee-Init/model"
+	"gee-Init/dao/mysql"
 	"gee-Init/util/logger"
-	"os"
 
 	"go.uber.org/zap"
 )
@@ -27,6 +25,7 @@ func Init() error {
 		fmt.Printf("init logger error : %s \n", err)
 		return err
 	}
+	defer zap.L().Sync()
 	// 读取翻译文件
 	if err := LoadLocales("config/locales/zh-cn.yaml"); err != nil {
 		// zap输出错误日志使用到err
@@ -34,7 +33,12 @@ func Init() error {
 	}
 
 	// 连接数据库
-	model.Database(os.Getenv("MYSQL_DSN"))
-	cache.Redis()
+	//model.Database(os.Getenv("MYSQL_DSN"))
+	//cache.Redis()
+
+	//初始化数据库
+	if err := mysql.Init(Conf.MySQLConfig); err != nil {
+
+	}
 	return nil
 }

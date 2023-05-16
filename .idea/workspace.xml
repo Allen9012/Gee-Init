@@ -4,16 +4,22 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e262ba1f-9a5b-4448-bb0e-147ef3e20d1e" name="Changes" comment="5/15 commit 进度同步">
-      <change afterPath="$PROJECT_DIR$/config/config_init.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/logger/logger.go" afterDir="false" />
+    <list default="true" id="e262ba1f-9a5b-4448-bb0e-147ef3e20d1e" name="Changes" comment="5/16 commit 进度同步">
+      <change afterPath="$PROJECT_DIR$/dao/mysql/mysql.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/mysql/post.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/mysql/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/redis/redis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/redis/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/common.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/post.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/constant.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/snowflake.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README(Gee).md" beforeDir="false" afterPath="$PROJECT_DIR$/README(Gee).md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/i18n.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/i18n.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/locales/zh-cn.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/zh-cn.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config_init.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config_init.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/migration.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/migration.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +63,7 @@
     "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Go_code/Gee_Init/util",
+    "last_opened_file_path": "D:/Go_code/Gee_Init/model",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -66,27 +72,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Go_code\Gee_Init\model" />
       <recent name="D:\Go_code\Gee_Init\util" />
+      <recent name="D:\Go_code\Gee_Init" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
-      <module name="Gee-Init" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
-      <module name="Gee-Init" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="DIRECTORY" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,7 +99,8 @@
     </ignored-roots>
     <MESSAGE value="初始化仓库" />
     <MESSAGE value="5/15 commit 进度同步" />
-    <option name="LAST_COMMIT_MESSAGE" value="5/15 commit 进度同步" />
+    <MESSAGE value="5/16 commit 进度同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="5/16 commit 进度同步" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
