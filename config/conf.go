@@ -1,42 +1,12 @@
-package conf
+package config
 
 import (
 	"fmt"
-	"os"
-	"singo/cache"
-	"singo/model"
-	"singo/util"
-
-	"go.uber.org/zap"
 
 	"github.com/fsnotify/fsnotify"
-
 	"github.com/spf13/viper"
+	"go.uber.org/zap"
 )
-
-// Init 初始化配置项
-func Init() error {
-	//	使用viper读取配置文件
-	err := initWithViper()
-	if err != nil {
-		return err
-	}
-
-	//// 设置日志级别
-	if err = logger.Init(config.Conf.LogConfig, config.Conf.Mode); err != nil {
-		fmt.Printf("init logger error : %s \n", err)
-		return err
-	}
-	// 读取翻译文件
-	if err := LoadLocales("conf/locales/zh-cn.yaml"); err != nil {
-		util.Log().Panic("翻译文件加载失败", err)
-	}
-
-	// 连接数据库
-	model.Database(os.Getenv("MYSQL_DSN"))
-	cache.Redis()
-	return nil
-}
 
 var Conf = new(AppConfig)
 

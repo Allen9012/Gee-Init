@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
-	"gee-Init/conf"
+	"gee-Init/config"
 	"gee-Init/server"
 )
 
 func main() {
 	// 从配置文件读取配置
-	err := conf.Init()
+	err := config.Init()
 	if err != nil {
 		fmt.Printf("init config error : %s \n", err)
 		return
