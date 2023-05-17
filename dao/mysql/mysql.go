@@ -21,13 +21,14 @@ func Init(cfg *config.MySQLConfig) (err error) {
 		cfg.Dbname)
 
 	db, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
+		// 默认情况下，GORM会在每个操作上启动一个新事务，如果该操作已经位于事务中，则不会启动新事务。
 		SkipDefaultTransaction: true,
 	})
 	if err != nil {
 		zap.L().Error("[dao mysql Init] connect mysql error ", zap.Error(err))
 		return
 	}
-
+	//	自动迁移
 	err = db.AutoMigrate(&model.User{}, &model.Post{})
 	if err != nil {
 		zap.L().Info("[dao mysql Init] create table failed ", zap.Error(err))

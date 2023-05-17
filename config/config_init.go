@@ -7,6 +7,7 @@ package config
 import (
 	"fmt"
 	"gee-Init/dao/mysql"
+	"gee-Init/dao/redis"
 	"gee-Init/util/logger"
 
 	"go.uber.org/zap"
@@ -29,7 +30,7 @@ func Init() error {
 	// 读取翻译文件
 	if err := LoadLocales("config/locales/zh-cn.yaml"); err != nil {
 		// zap输出错误日志使用到err
-		zap.L().Panic("翻译文件加载失败 %v")
+		zap.L().Panic("翻译文件加载失败 %v", zap.Error(err))
 	}
 
 	// 连接数据库
@@ -38,7 +39,15 @@ func Init() error {
 
 	//初始化数据库
 	if err := mysql.Init(Conf.MySQLConfig); err != nil {
+		zap.L().Panic("init mysql error : %s \n", zap.Error(err))
+		return err
+	}
 
+	//初始化redis
+	if err := redis.Init(Conf.RedisConfig); err != nil {
+		zap.L().Panic("init redis error : %s \n", zap.Error(err))
+		return err
 	}
 	return nil
+
 }
