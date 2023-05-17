@@ -3,6 +3,7 @@ mode: dev
 port: 9012
 version: v0.0.1
 start_time: "2023-05-01"
+machine_id: 8848
 
 log:
   level: debug

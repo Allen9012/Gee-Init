@@ -1,8 +1,8 @@
 package service
 
 import (
-	"singo/model"
-	"singo/serializer"
+	"gee-Init/deprecated/model"
+	"gee-Init/deprecated/serializer"
 )
 
 // UserRegisterService 管理用户注册服务
@@ -23,7 +23,7 @@ func (service *UserRegisterService) valid() *serializer.Response {
 	}
 
 	count := int64(0)
-	model.DB.Model(&model.User{}).Where("nickname = ?", service.Nickname).Count(&count)
+	db.Model(&model.User{}).Where("nickname = ?", service.Nickname).Count(&count)
 	if count > 0 {
 		return &serializer.Response{
 			Code: 40001,
@@ -32,7 +32,7 @@ func (service *UserRegisterService) valid() *serializer.Response {
 	}
 
 	count = 0
-	model.DB.Model(&model.User{}).Where("user_name = ?", service.UserName).Count(&count)
+	db.Model(&model.User{}).Where("user_name = ?", service.UserName).Count(&count)
 	if count > 0 {
 		return &serializer.Response{
 			Code: 40001,
@@ -66,7 +66,7 @@ func (service *UserRegisterService) Register() serializer.Response {
 	}
 
 	// 创建用户
-	if err := model.DB.Create(&user).Error; err != nil {
+	if err := db.Create(&user).Error; err != nil {
 		return serializer.ParamErr("注册失败", err)
 	}
 

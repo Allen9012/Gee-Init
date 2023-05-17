@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"gee-Init/dao/mysql"
 	"gee-Init/dao/redis"
+	"gee-Init/util"
 	"gee-Init/util/logger"
 
 	"go.uber.org/zap"
@@ -42,12 +43,19 @@ func Init() error {
 		zap.L().Panic("init mysql error : %s \n", zap.Error(err))
 		return err
 	}
-
+	defer mysql.Close()
 	//初始化redis
 	if err := redis.Init(Conf.RedisConfig); err != nil {
 		zap.L().Panic("init redis error : %s \n", zap.Error(err))
 		return err
 	}
+	defer redis.Close()
+	// 初始化雪花
+	if err := util.Init(Conf.StartTime, Conf.MachineID); err != nil {
+		zap.L().Panic("init snowflake error : %s \n", zap.Error(err))
+		return err
+	}
+
 	return nil
 
 }

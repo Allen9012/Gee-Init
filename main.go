@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"gee-Init/config"
-	"gee-Init/server"
+	"gee-Init/router"
 )
 
 func main() {
@@ -15,6 +15,6 @@ func main() {
 	}
 
 	// 装载路由
-	r := server.NewRouter()
+	r := router.NewRouter()
 	r.Run(":3000")
 }

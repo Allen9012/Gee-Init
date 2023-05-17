@@ -4,7 +4,7 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
-	"mio-init/model"
+	"gee-Init/model"
 
 	"go.uber.org/zap"
 )

@@ -1,7 +1,7 @@
 package mysql
 
 import (
-	"mio-init/model"
+	"gee-Init/model"
 
 	"go.uber.org/zap"
 )

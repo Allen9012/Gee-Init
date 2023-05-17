@@ -1,12 +1,16 @@
 package service
 
 import (
-	"singo/model"
-	"singo/serializer"
+	"gee-Init/deprecated/model"
+	"gee-Init/deprecated/serializer"
+
+	"gorm.io/gorm"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
 )
+
+var db *gorm.DB
 
 // UserLoginService 管理用户登录的服务
 type UserLoginService struct {
@@ -26,7 +30,7 @@ func (service *UserLoginService) setSession(c *gin.Context, user model.User) {
 func (service *UserLoginService) Login(c *gin.Context) serializer.Response {
 	var user model.User
 
-	if err := model.DB.Where("user_name = ?", service.UserName).First(&user).Error; err != nil {
+	if err := db.Where("user_name = ?", service.UserName).First(&user).Error; err != nil {
 		return serializer.ParamErr("账号或密码错误", nil)
 	}
 
