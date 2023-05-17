@@ -2,7 +2,7 @@ package mysql
 
 import (
 	"fmt"
-	"gee-Init/config"
+	"gee-Init/config/conf"
 	"gee-Init/model"
 
 	"go.uber.org/zap"
@@ -12,7 +12,7 @@ import (
 
 var db *gorm.DB
 
-func Init(cfg *config.MySQLConfig) (err error) {
+func Init(cfg *conf.MySQLConfig) (err error) {
 	dsn := fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8mb4&parseTime=True",
 		cfg.User,
 		cfg.Password,

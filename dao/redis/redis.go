@@ -3,7 +3,7 @@ package redis
 import (
 	"context"
 	"fmt"
-	"gee-Init/config"
+	"gee-Init/config/conf"
 	"time"
 
 	"github.com/go-redis/redis/v8"
@@ -20,7 +20,7 @@ const (
 	TokenTimeout = time.Hour * 24
 )
 
-func Init(cfg *config.RedisConfig) (err error) {
+func Init(cfg *conf.RedisConfig) (err error) {
 	client = redis.NewClient(&redis.Options{
 		Addr:     fmt.Sprintf("%s:%d", cfg.Host, cfg.Port),
 		Password: cfg.Password, // 密码

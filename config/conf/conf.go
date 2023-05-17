@@ -1,4 +1,4 @@
-package config
+package conf
 
 import (
 	"fmt"
@@ -48,7 +48,7 @@ type RedisConfig struct {
 	PoolSize int    `mapstructure:"pool_size"`
 }
 
-func initWithViper() (err error) {
+func InitWithViper() (err error) {
 	//TODO 设置默认值
 	viper.SetDefault("app.Name", "Gee-Init")
 	viper.SetDefault("app.port", 8080)
@@ -65,7 +65,7 @@ func initWithViper() (err error) {
 		return
 	}
 	//	将读取的配置信息保存至全局变量Conf
-	if err := viper.Unmarshal(&Conf); err != nil {
+	if err = viper.Unmarshal(&Conf); err != nil {
 		zap.L().Error("viper.Unmarshal failed, err : %v", zap.Error(err))
 		return
 	}
@@ -73,7 +73,7 @@ func initWithViper() (err error) {
 	viper.WatchConfig()
 	viper.OnConfigChange(func(in fsnotify.Event) {
 		fmt.Println("配置文件修改了...")
-		if err := viper.Unmarshal(&Conf); err != nil {
+		if err = viper.Unmarshal(&Conf); err != nil {
 			zap.L().Error("viper.Unmarshal failed, err : %v", zap.Error(err))
 			return
 		}

@@ -1,0 +1,14 @@
+{"level":"INFO","time":"2023-05-18T13:38:26.204+0800","caller":"logger/logger.go:50","msg":"config_init logger success"}
+{"level":"ERROR","time":"2023-05-18T13:38:26.237+0800","caller":"mysql/mysql.go:28","msg":"[dao mysql Init] connect mysql error ","error":"Error 1049: Unknown database 'gee_init'"}
+{"level":"PANIC","time":"2023-05-18T13:38:26.237+0800","caller":"config_init/config_init.go:45","msg":"config_init mysql error : %s \n","error":"Error 1049: Unknown database 'gee_init'"}
+{"level":"INFO","time":"2023-05-18T13:38:57.643+0800","caller":"logger/logger.go:50","msg":"config_init logger success"}
+{"level":"INFO","time":"2023-05-18T13:38:57.849+0800","caller":"redis/redis.go:33","msg":"[dao redis Init] ping redis client failed "}
+{"level":"PANIC","time":"2023-05-18T13:38:57.850+0800","caller":"config_init/config_init.go:57","msg":"config_init snowflake error : %s \n","error":"Node number must be between 0 and 1023"}
+{"level":"INFO","time":"2023-05-18T13:38:57.851+0800","caller":"redis/redis.go:39","msg":"[dao redis Close] close the redis connect failed "}
+{"level":"INFO","time":"2023-05-18T13:38:57.851+0800","caller":"mysql/mysql.go:50","msg":"[dao mysql Close] get sql instance failed "}
+{"level":"INFO","time":"2023-05-18T13:38:57.852+0800","caller":"mysql/mysql.go:52","msg":"[dao mysql Close] close the mysql connect failed "}
+{"level":"INFO","time":"2023-05-18T13:39:30.951+0800","caller":"logger/logger.go:50","msg":"config_init logger success"}
+{"level":"INFO","time":"2023-05-18T13:39:31.234+0800","caller":"redis/redis.go:33","msg":"[dao redis Init] ping redis client failed "}
+{"level":"INFO","time":"2023-05-18T13:39:31.235+0800","caller":"redis/redis.go:39","msg":"[dao redis Close] close the redis connect failed "}
+{"level":"INFO","time":"2023-05-18T13:39:31.235+0800","caller":"mysql/mysql.go:50","msg":"[dao mysql Close] get sql instance failed "}
+{"level":"INFO","time":"2023-05-18T13:39:31.235+0800","caller":"mysql/mysql.go:52","msg":"[dao mysql Close] close the mysql connect failed "}

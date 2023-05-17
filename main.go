@@ -2,15 +2,15 @@ package main
 
 import (
 	"fmt"
-	"gee-Init/config"
+	"gee-Init/config/config_init"
 	"gee-Init/router"
 )
 
 func main() {
 	// 从配置文件读取配置
-	err := config.Init()
+	err := config_init.Init()
 	if err != nil {
-		fmt.Printf("init config error : %s \n", err)
+		fmt.Printf("config_init config error : %s \n", err)
 		return
 	}
 

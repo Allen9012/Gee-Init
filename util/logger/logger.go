@@ -1,7 +1,7 @@
 package logger
 
 import (
-	"gee-Init/config"
+	"gee-Init/config/conf"
 	"net"
 	"net/http"
 	"net/http/httputil"
@@ -19,7 +19,7 @@ import (
 var lg *zap.Logger
 
 // Init 初始化lg
-func Init(cfg *config.LogConfig, mode string) (err error) {
+func Init(cfg *conf.LogConfig, mode string) (err error) {
 	writeSyncer := getLogWriter(
 		cfg.Filename,
 		cfg.MaxSize,
@@ -47,7 +47,7 @@ func Init(cfg *config.LogConfig, mode string) (err error) {
 	lg = zap.New(core, zap.AddCaller())
 
 	zap.ReplaceGlobals(lg)
-	zap.L().Info("init logger success")
+	zap.L().Info("config_init logger success")
 	return
 }
 

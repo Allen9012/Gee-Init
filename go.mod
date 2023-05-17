@@ -13,8 +13,10 @@ require (
 	github.com/google/uuid v1.3.0
 	github.com/natefinch/lumberjack v2.0.0+incompatible
 	github.com/spf13/viper v1.15.0
+	github.com/swaggo/files v1.0.1
 	github.com/swaggo/gin-swagger v1.6.0
 	go.uber.org/zap v1.21.0
+	golang.org/x/crypto v0.5.0
 	gopkg.in/go-playground/validator.v8 v8.18.2
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0

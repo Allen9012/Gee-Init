@@ -1,9 +1,9 @@
-name: gee-init
+name: gee-config_init
 mode: dev
 port: 9012
 version: v0.0.1
 start_time: "2023-05-01"
-machine_id: 8848
+machine_id: 69  # 机器ID必须在0-1023之间
 
 log:
   level: debug
@@ -14,10 +14,10 @@ log:
 
 mysql:
   host: 127.0.0.1
-  port: 92
+  port: 3306
   user: root
   password: 9012
-  dbname: gee_init
+  dbname: AllenSo
   max_open_conn: 200
   max_idle_conn: 50
 

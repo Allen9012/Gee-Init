@@ -5,36 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e262ba1f-9a5b-4448-bb0e-147ef3e20d1e" name="Changes" comment="5/17 MID commit 进度同步">
-      <change afterPath="$PROJECT_DIR$/controller/common.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/response.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controller/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deprecated/ReadMe.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deprecated/middleware/auth.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deprecated/model/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deprecated/serializer/common.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/deprecated/serializer/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logic/post.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logic/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/token.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/router/v1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gee.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README(Singo).md" beforeDir="false" afterPath="$PROJECT_DIR$/README(Singo).md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/config_init.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config_init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/mysql/post.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/mysql/post.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/mysql/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/mysql/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/conf.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/conf/conf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config_init.go" beforeDir="false" afterPath="$PROJECT_DIR$/config/config_init/config_init.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/mysql/mysql.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/mysql/mysql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao/redis/redis.go" beforeDir="false" afterPath="$PROJECT_DIR$/dao/redis/redis.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/auth.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/cors.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/cors.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/session.go" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/middleware/session.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/init.go" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model/init.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/migration.go" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/model/migration.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serializer/common.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serializer/user.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/router/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_login_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/service/user_login_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user_register_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/deprecated/service/user_register_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/logger/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/util/logger/logger.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,14 +56,20 @@
     "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
     "WebServerToolWindowFactoryState": "false",
     "ask.go.tool.to.install.GoImportsTaskConsumer": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Cherry-picking in master",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/Go_code/Gee_Init/router",
+    "last_opened_file_path": "D:/Go_code/Gee_Init",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "fileTemplates"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -94,12 +81,28 @@
       <recent name="D:\Go_code\Gee_Init\util" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Go_code\Gee_Init\config\init" />
+      <recent name="D:\Go_code\Gee_Init\config\conf" />
       <recent name="D:\Go_code\Gee_Init\deprecated\model" />
       <recent name="D:\Go_code\Gee_Init\deprecated\middleware" />
       <recent name="D:\Go_code\Gee_Init\deprecated\service" />
-      <recent name="D:\Go_code\Gee_Init\deprecated" />
-      <recent name="D:\Go_code\Gee_Init\router" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="go build gee-Init" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="Gee-Init" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="gee-Init" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build gee-Init" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
