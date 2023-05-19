@@ -51,6 +51,10 @@ func Init(cfg *conf.LogConfig, mode string) (err error) {
 	return
 }
 
+// getEncoder
+//
+//	@Description: 获取zapcore.Encoder
+//	@return zapcore.Encoder
 func getEncoder() zapcore.Encoder {
 	encoderConfig := zap.NewProductionEncoderConfig()
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -61,6 +65,14 @@ func getEncoder() zapcore.Encoder {
 	return zapcore.NewJSONEncoder(encoderConfig)
 }
 
+// getLogWriter
+//
+//	@Description: 获取zapcore WriteSyncer 使用了lumberjack进行日志切割归档
+//	@param filename
+//	@param maxSize
+//	@param maxBackup
+//	@param maxAge
+//	@return zapcore.WriteSyncer
 func getLogWriter(filename string, maxSize, maxBackup, maxAge int) zapcore.WriteSyncer {
 	lumberJackLogger := &lumberjack.Logger{
 		Filename:   filename,
@@ -101,6 +113,7 @@ func GinRecovery(stack bool) gin.HandlerFunc {
 				// Check for a broken connection, as it is not really a
 				// condition that warrants a panic stack trace.
 				var brokenPipe bool
+				// 判断是否为网络断开
 				if ne, ok := err.(*net.OpError); ok {
 					if se, ok := ne.Err.(*os.SyscallError); ok {
 						if strings.Contains(strings.ToLower(se.Error()), "broken pipe") || strings.Contains(strings.ToLower(se.Error()), "connection reset by peer") {
@@ -109,6 +122,7 @@ func GinRecovery(stack bool) gin.HandlerFunc {
 					}
 				}
 
+				// 获取请求信息,该方法只能用作debug mode
 				httpRequest, _ := httputil.DumpRequest(c.Request, false)
 				if brokenPipe {
 					zap.L().Error(c.Request.URL.Path,
@@ -120,7 +134,7 @@ func GinRecovery(stack bool) gin.HandlerFunc {
 					c.Abort()
 					return
 				}
-
+				//	判断是否需要打印stack
 				if stack {
 					zap.L().Error("[Recovery from panic]",
 						zap.Any("error", err),

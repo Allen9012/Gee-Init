@@ -12,6 +12,10 @@ import (
 
 var token = ""
 
+// RefreshToken
+//
+//	@Description: 请求如果携带token，刷新redis token
+//	@param c
 func RefreshToken(c *gin.Context) {
 	// 从请求头中获取Token, 没有token就直接返回
 	token = c.GetHeader(util.TokenHeader)

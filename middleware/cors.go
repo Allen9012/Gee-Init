@@ -32,6 +32,10 @@ func Cors_singo() gin.HandlerFunc {
 	return cors.New(config)
 }
 
+// Cors_gee
+//
+//	@Description: 跨域配置
+//	@param c
 func Cors_gee(c *gin.Context) {
 	method := c.Request.Method
 	origin := c.Request.Header.Get("Origin")
@@ -42,6 +46,7 @@ func Cors_gee(c *gin.Context) {
 		c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Cache-Control, Content-Language, Content-Type")
 		c.Header("Access-Control-Allow-Credentials", "true")
 	}
+	//Abort所有OPTIONS方法
 	if method == "OPTIONS" {
 		c.AbortWithStatus(http.StatusNoContent)
 	}
