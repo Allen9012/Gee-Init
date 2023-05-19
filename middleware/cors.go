@@ -33,9 +33,6 @@ func Cors_singo() gin.HandlerFunc {
 }
 
 // Cors_gee
-//
-//	@Description: 跨域配置
-//	@param c
 func Cors_gee(c *gin.Context) {
 	method := c.Request.Method
 	origin := c.Request.Header.Get("Origin")

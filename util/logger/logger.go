@@ -52,9 +52,6 @@ func Init(cfg *conf.LogConfig, mode string) (err error) {
 }
 
 // getEncoder
-//
-//	@Description: 获取zapcore.Encoder
-//	@return zapcore.Encoder
 func getEncoder() zapcore.Encoder {
 	encoderConfig := zap.NewProductionEncoderConfig()
 	encoderConfig.EncodeTime = zapcore.ISO8601TimeEncoder
@@ -66,13 +63,6 @@ func getEncoder() zapcore.Encoder {
 }
 
 // getLogWriter
-//
-//	@Description: 获取zapcore WriteSyncer 使用了lumberjack进行日志切割归档
-//	@param filename
-//	@param maxSize
-//	@param maxBackup
-//	@param maxAge
-//	@return zapcore.WriteSyncer
 func getLogWriter(filename string, maxSize, maxBackup, maxAge int) zapcore.WriteSyncer {
 	lumberJackLogger := &lumberjack.Logger{
 		Filename:   filename,

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"gee-Init/config/config_init"
+	"gee-Init/docs"
 	"gee-Init/router"
 )
 
@@ -13,7 +14,7 @@ func main() {
 		fmt.Printf("config_init config error : %s \n", err)
 		return
 	}
-
+	docs.SwaggerInfo.BasePath = "/api/v1"
 	// 装载路由
 	r := router.NewRouter()
 	r.Run(":3000")

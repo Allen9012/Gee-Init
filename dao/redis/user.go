@@ -12,12 +12,6 @@ var (
 )
 
 // InsertTokenByUserId
-//
-//	@Description: 把 token 插入到 redis中
-//	@param token
-//	@param userId
-//	@param userRole
-//	@return err
 func InsertTokenByUserId(token string, userId int64, userRole uint8) (err error) {
 	// 使用 pipeline 减少 RTT
 	pipeline := client.TxPipeline()
@@ -35,9 +29,6 @@ func InsertTokenByUserId(token string, userId int64, userRole uint8) (err error)
 }
 
 // RefreshToken
-//
-//	@Description: 刷新token
-//	@param token
 func RefreshToken(token string) {
 	key := TokenPrefix + token
 
@@ -55,11 +46,6 @@ func RefreshToken(token string) {
 }
 
 // CheckTokenExist
-//
-//	@Description: 检查token是否存在
-//	@param token
-//	@return []interface{}
-//	@return error
 func CheckTokenExist(token string) ([]interface{}, error) {
 	key := TokenPrefix + token
 	res, err := client.HMGet(ctx, key, util.KeyUserId, util.KeyUserRole).Result()
@@ -74,10 +60,6 @@ func CheckTokenExist(token string) ([]interface{}, error) {
 }
 
 // DeleteToken
-//
-//	@Description: 删除token
-//	@param token
-//	@return error
 func DeleteToken(token string) error {
 	return client.HDel(ctx, TokenPrefix+token, util.KeyUserId, util.KeyUserRole).Err()
 }
